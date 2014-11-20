@@ -7,7 +7,7 @@ import django, sys, json
 
 
 class Session(object):
-    """docstring for Session"""
+    """Render Session"""
     def __init__(self, template_dirs = '.'):
         super(Session, self).__init__()
         self.template_dirs = template_dirs
@@ -20,11 +20,12 @@ class Session(object):
     def __str__(self):
         print 'template_dirs:' + template_dirs
 
+#not used
 SessionCache = {}
 
 if __name__ == '__main__':
-    if len(sys.argv) < 4:
-        raise Exception('parameters required')
+    if len(sys.argv) < 3:
+        raise Exception('"template" and "data" must be indicated')
     else:
         dirs = unquote(sys.argv[1])
         session = SessionCache.get(dirs)
@@ -34,7 +35,7 @@ if __name__ == '__main__':
         tpl = unquote(sys.argv[2])
         try:
             data = json.loads(unquote(sys.argv[3]))
-        except e:
+        except Exception,e:
             data = {}
         html = session.render(tpl, data)
         print quote(html.encode('utf-8'))

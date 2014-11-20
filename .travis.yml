@@ -1,6 +1,6 @@
 language: node_js
 before_install:
-  - pip install Django
+  - sudo pip install Django
   - npm install -g grunt-cli
   - npm uninstall grunt # https://github.com/npm/npm/issues/3958
 node_js:
