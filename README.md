@@ -5,7 +5,14 @@ django
 An template wrapper of [Django][django-url] for [Express.js][express-url].
 
 
-[Django][django-url]'s template syntax has much more differences from [twig](http://twig.sensiolabs.org) or [swig](paularmstrong.github.io/swig/).So I made a wrapper for it to work with [Express.js][express-url].
+[Django][django-url]'s template syntax has many more differences from [twig](http://twig.sensiolabs.org) or [swig](paularmstrong.github.io/swig/).So I make a wrapper for it to work with [Express.js][express-url].
+
+I setup a node-python bridge through shell script,so it may fail if the parameter is too long.Get the longest parameter on your system:
+
+    
+    $ getconf ARG_MAX
+
+I'll find out a better way.
 
 author
 ======
