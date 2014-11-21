@@ -22,13 +22,15 @@
   },
   "homepage": "https://github.com/yanni4night/django",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-nodeunit": "^0.4.1",
-    "load-grunt-tasks": "^1.0.0",
-    "time-grunt": "^1.0.0"
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "load-grunt-tasks": "~1.0.0",
+    "time-grunt": "~1.0.0"
   },
   "dependencies": {
-    "extend": "^2.0.0"
+    "async": "~0.9.0",
+    "chalk": "~0.5.1",
+    "extend": "~2.0.0"
   }
 }
