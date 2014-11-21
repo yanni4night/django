@@ -1,7 +1,7 @@
 {
   "name": "django",
   "version": "0.1.1",
-  "description": "An template wrapper of Django for Express.js",
+  "description": "A wrapper of Django's template engine for Express.js",
   "main": "index.js",
   "scripts": {
     "test": "grunt test"
@@ -12,6 +12,9 @@
   },
   "keywords": [
     "django",
+    "swig",
+    "twig",
+    "jinja",
     "template",
     "express"
   ],
