@@ -19,6 +19,8 @@ matrix:
 install:
   # Get the latest stable version of Node 0.STABLE.latest
   - ps: Install-Product node $env:nodejs_version
+  # Install Django
+  - pip install -v Django==1.7 
   # Typical npm stuff.
   - npm install
   # Grunt-specific stuff.
@@ -30,6 +32,10 @@ test_script:
   # Output useful info for debugging.
   - node --version
   - npm --version
+  # Output pip version
+  - pip -V
+  # Outpur easy_install version
+  - easy_install --version
   # We test multiple Windows shells because of prior stdout buffering issues
   # filed against Grunt. https://github.com/joyent/node/issues/3584
   - ps: "npm test # PowerShell" # Pass comment to PS for easier debugging
