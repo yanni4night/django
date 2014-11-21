@@ -1,21 +1,19 @@
 ##django
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Support me][gittip-image]][gittip-url] [![Build Status][travis-image]][travis-url] [![Build status][appveyor-image]][appveyor-url] [![Built with Grunt][grunt-image]][grunt-url]
 
-An template wrapper of [Django][django-url] for [Express.js][express-url].
+A wrapper of [Django][django-url]'s template engine for _[Express.js][express-url]_.It's only for development on the front-end side.**DO NOT** use it in production.
 
 
-[Django][django-url]'s template syntax has quite a lot of differences from [twig](http://twig.sensiolabs.org),[jinja2](http://jinja.pocoo.org/) or [swig](http://paularmstrong.github.io/swig/).I make a wrapper so it can work with [Express.js][express-url].
+[Django][django-url]'s template syntax is quite different from [twig](http://twig.sensiolabs.org/),[jinja2](http://jinja.pocoo.org/) or [swig](http://paularmstrong.github.io/swig/).For now,there is no replacement like _django.js_ can simulate the syntax and the interfaces.But we can make [Django][django-url] itself working with _[node.js](http://nodejs.org/)_,even _[Express.js][express-url]_.So a wrapper is required.
 
-I setup a node-python bridge by shell script,it may fail if the parameter is too long.Get the longest parameter on your system:
+I setup a node-python bridge by shell script,it may fail if the parameter is too long.Get the longest parameter length on your \*nix system:
 
     
     $ getconf ARG_MAX
 
-I'll find out a better way later.
-
 ##install
 
-First you have to install [Django][django-url] framework by [pip][pip-url] or [easy_install][easyinstall-url]:
+First you have to install [Django][django-url] framework, _[pip][pip-url]_ or _[easy\_install][easyinstall-url]_ is recommended:
 
     
     # pip install -v Django==1.7
@@ -25,7 +23,7 @@ First you have to install [Django][django-url] framework by [pip][pip-url] or [e
 
 Make sure it's installed successfully.
 
-Set django as a template engine for [Express.js][express-url]:
+Set django as a template engine for _[Express.js][express-url]_:
 
     
     var express = require('express');
@@ -44,22 +42,30 @@ Set django as a template engine for [Express.js][express-url]:
 
 ##usage
 
-######1.configure(options)
+######1.configure(configurations)
+ - param **configurations**: \[Object\]\[Required\] the configurations object
+ - return **this**
 
-Setup configurations.This should be called first.
+Set the configurations.It should be called at first.
 
 ######2.renderFile(tpl, data, callback)
+ - param **tpl**: \[String\]\[Required\] template file name
+ - param **data**: \[Object\]\[Optional\] plain object to render a template
+ - param **callback**: \[Function\]\[Required\] render callback function
+ - return **undefined**
 
 Render a template file with data.
 
-##options
-All the following options should be set by _configure_.
+##configurations
+All the following configurations should be set by _configure_ function.
 
 ######1.template_dirs
+ - Type: \[String\]
+ - Default: 'templates'
 
-The root directory of the template files,this is necessary when templates _extend_/_include_.
+The root directory of the template files,this is necessary when templates _[extend](https://docs.djangoproject.com/en/1.7/ref/templates/builtins/#extends)_ or _[include](https://docs.djangoproject.com/en/1.7/ref/templates/builtins/#include)_.
 
-##attention
+##notice
 
  - only **utf8** encoding is supported
  - django **cannot** render from source code for now
