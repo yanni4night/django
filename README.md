@@ -1,5 +1,5 @@
 ##django
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Support me][gittip-image]][gittip-url] [![Build Status][travis-image]][travis-url] [![Built with Grunt][grunt-image]][grunt-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Support me][gittip-image]][gittip-url] [![Build Status][travis-image]][travis-url] [![Build status][appveyor-image]][appveyor-url] [![Built with Grunt][grunt-image]][grunt-url]
 
 An template wrapper of [Django][django-url] for [Express.js][express-url].
 
@@ -85,6 +85,9 @@ The root directory of the template files,this is necessary when templates _exten
 
 [travis-url]: https://travis-ci.org/yanni4night/django
 [travis-image]: http://img.shields.io/travis/yanni4night/django.svg
+
+[appveyor-image]:https://ci.appveyor.com/api/projects/status/bsu9w9ar8pboc2nj?svg=true
+[appveyor-url]:https://ci.appveyor.com/project/yanni4night/django
 
 [grunt-url]:http://gruntjs.com/
 [grunt-image]: http://img.shields.io/badge/BUILT%20WITH-GRUNT-yellow.svg
