@@ -5,7 +5,6 @@ from django.conf import settings
 from urllib import unquote
 import django, sys, json
 
-
 class Session(object):
     """Render Session"""
     def __init__(self, template_dirs = '.'):
@@ -39,3 +38,5 @@ if __name__ == '__main__':
             data = {}
 
         sys.stdout.write(session.render(tpl, data).encode('utf-8'))
+        sys.stdout.flush()
+        sys.exit()
