@@ -25,16 +25,17 @@ if __name__ == '__main__':
     if len(sys.argv) < 3:
         raise Exception('"template_dirs" and "template" BOTH are required')
     else:
-        dirs = unquote(sys.argv[1])#template_dirs is a directory path that are quoted
+        dirs = unquote(sys.argv[1])#template_dirs is a directory path that is quoted
         session = Session(dirs)
 
-        tpl = unquote(sys.argv[2])#template is a file path that are quoted
+        tpl = unquote(sys.argv[2])#template is a file path that is quoted
 
         mockStr = sys.stdin.readline();#We read the mock data from stdin
 
         try:
             data = json.loads(mockStr)
         except Exception,e:
+            #ignore broken mock string format
             data = {}
 
         print session.render(tpl, data).encode('utf-8')
