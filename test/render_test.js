@@ -26,10 +26,10 @@ exports.render = {
         done();
     },
     version: function(test) {
-        test.deepEqual(django.version, grunt.file.readJSON(path.join(__dirname, '..', 'package.json')).version, 'version followed');
+        test.deepEqual(django.version, grunt.file.readJSON(path.join(__dirname, '..', 'package.json')).version, 'Version followed');
         test.done();
     },
-    render: function(test) {
+    success: function(test) {
         django.renderFile('index.html', {
             name: 'django',
             desc: '中文'
@@ -37,6 +37,12 @@ exports.render = {
             test.ok(!err, 'No Error Occured');
             test.ok(/django/.test(content), 'Variable injected');
             test.ok(!!~content.indexOf('中文'), 'East-aria language injected');
+            test.done();
+        });
+    },
+    fail: function(test) {
+        django.renderFile('non-existed.html', function(err, content) {
+            test.ok(!!err, 'Throw exception when file not found');
             test.done();
         });
     }
