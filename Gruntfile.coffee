@@ -6,8 +6,7 @@ module.exports = (grunt)=>
     grunt.initConfig
         jshint:
             options:
-                strict: true,
-                node: true
+                jshintrc: '.jshintrc'
             files: ['*.js', 'lib/*.js']
         nodeunit:
             tests: ['test/*_test.js']
