@@ -1,5 +1,5 @@
 ##django
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Build status][appveyor-image]][appveyor-url] [![Dependency Status][david-dm-image]][david-dm-url] [![Codeship Status][codeship-image]][codeship-url] [![Coverage Status][coverage-image]][coverage-url] [![Built with Grunt][grunt-image]][grunt-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Build status][appveyor-image]][appveyor-url] [![Dependency Status][david-dm-image]][david-dm-url] [![Codeship Status][codeship-image]][codeship-url] [![Built with Grunt][grunt-image]][grunt-url]
 
 A wrapper of [Django][django-url]'s template engine for _[Express.js][express-url]_.It's designed only for development on web front-end side.**DO NOT** use it for production.
 
@@ -100,6 +100,3 @@ The root directory of the template files,this is necessary when templates _[exte
 
 [codeship-image]:https://codeship.com/projects/79da7240-5481-0132-ea32-42ab35009c21/status
 [codeship-url]:https://codeship.com/projects/49203
-
-[coverage-image]:https://coveralls.io/repos/yanni4night/django/badge.png
-[coverage-url]:https://coveralls.io/r/yanni4night/django
