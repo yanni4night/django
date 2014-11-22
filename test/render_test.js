@@ -30,13 +30,11 @@ exports.django = {
         test.done();
     },
     success: function(test) {
-        django.renderFile('index.html', {
-            name: 'django',
-            desc: '中文'
-        }, function(err, content) {
+        django.renderFile('index.html', grunt.file.readJSON(path.join(__dirname, 'mock', 'index.json')), function(err, content) {
             test.ok(!err, 'No Error Occured');
-            test.ok(/django/.test(content), 'Variable injected');
-            test.ok(!!~(content||"").indexOf('中文'), 'East-aria language injected');
+            test.ok(/YOUTH/.test(content), 'Variable injected');
+            test.ok(!!~(content || "").indexOf('青春'), 'East-aria language injected');
+            grunt.file.write(path.join(__dirname, 'output', 'index.html'), content);
             test.done();
         });
     },
@@ -48,7 +46,7 @@ exports.django = {
     },
     illegal_data: function(test) {
         var illegalData = {};
-        illegalData.inner = illegalData;//circular reference
+        illegalData.inner = illegalData; //circular reference
 
         django.renderFile('index.html', illegalData, function(err, content) {
             test.ok(/circular/.test(err.message), 'Throw exception when data illegal');
