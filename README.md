@@ -1,5 +1,5 @@
 ##django
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Support me][gittip-image]][gittip-url] [![Build Status][travis-image]][travis-url] [![Build status][appveyor-image]][appveyor-url] [![Built with Grunt][grunt-image]][grunt-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Build status][appveyor-image]][appveyor-url] [![Dependency Status][david-dm-image]][david-dm-url] [![Built with Grunt][grunt-image]][grunt-url]
 
 A wrapper of [Django][django-url]'s template engine for _[Express.js][express-url]_.It's designed only for development on web front-end side.**DO NOT** use it for production.
 
@@ -82,9 +82,6 @@ The root directory of the template files,this is necessary when templates _[exte
 [django-url]:https://djangoproject.com/
 [express-url]:http://expressjs.jser.us/
 
-[gittip-url]: https://www.gittip.com/yanni4night/
-[gittip-image]: http://img.shields.io/gittip/yanni4night.svg
-
 [downloads-image]: http://img.shields.io/npm/dm/django.svg
 [npm-url]: https://npmjs.org/package/django
 [npm-image]: http://img.shields.io/npm/v/django.svg
@@ -97,3 +94,6 @@ The root directory of the template files,this is necessary when templates _[exte
 
 [grunt-url]:http://gruntjs.com/
 [grunt-image]: http://img.shields.io/badge/BUILT%20WITH-GRUNT-yellow.svg
+
+[david-dm-url]:https://david-dm.org/yanni4night/django
+[david-dm-image]:https://david-dm.org/yanni4night/django.svg
