@@ -21,7 +21,7 @@ django.configure({
     template_dirs: path.join(__dirname, 'templates')
 });
 
-exports.render = {
+exports.django = {
     setUp: function(done) {
         done();
     },
@@ -40,9 +40,18 @@ exports.render = {
             test.done();
         });
     },
-    fail: function(test) {
+    tplAbsence: function(test) {
         django.renderFile('non-existed.html', function(err, content) {
-            test.ok(!!err, 'Throw exception when file not found');
+            test.ok(/TemplateDoesNotExist/.test(err.message), 'Throw exception when file not found');
+            test.done();
+        });
+    },
+    illegal_data: function(test) {
+        var illegalData = {};
+        illegalData.inner = illegalData;//circular reference
+
+        django.renderFile('index.html', illegalData, function(err, content) {
+            test.ok(/circular/.test(err.message), 'Throw exception when data illegal');
             test.done();
         });
     }
