@@ -17,14 +17,19 @@ var path = require('path');
 
 var django = require('../lib/');
 
+django.configure({
+    template_dirs: path.join(__dirname, 'templates')
+});
+
 exports.render = {
     setUp: function(done) {
         done();
     },
+    version: function(test) {
+        test.deepEqual(django.version, grunt.file.readJSON(path.join(__dirname, '..', 'package.json')).version, 'version followed');
+        test.done();
+    },
     render: function(test) {
-        django.configure({
-            template_dirs: path.join(__dirname, 'templates')
-        });
         django.renderFile('index.html', {
             name: 'django',
             desc: '中文'
