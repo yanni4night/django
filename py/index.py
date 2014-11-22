@@ -38,4 +38,4 @@ if __name__ == '__main__':
             #ignore broken mock string format
             data = {}
 
-        print session.render(tpl, data).encode('utf-8')
+        sys.stdout.write(session.render(tpl, data).encode('utf-8'))
