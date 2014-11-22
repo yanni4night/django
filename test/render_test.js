@@ -36,7 +36,7 @@ exports.django = {
         }, function(err, content) {
             test.ok(!err, 'No Error Occured');
             test.ok(/django/.test(content), 'Variable injected');
-            test.ok(!!~content.indexOf('中文'), 'East-aria language injected');
+            test.ok(!!~(content||"").indexOf('中文'), 'East-aria language injected');
             test.done();
         });
     },
