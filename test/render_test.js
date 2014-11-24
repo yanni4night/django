@@ -52,5 +52,14 @@ exports.django = {
             test.ok(/circular/.test(err.message), 'Throw exception when data illegal');
             test.done();
         });
+    },
+    source: function(test) {
+        django.render(grunt.file.read(path.join(__dirname, 'templates', 'index.html')), grunt.file.readJSON(path.join(__dirname, 'mock', 'index.json')), function(err, content) {
+            test.ok(!err, 'No Error Occured');
+            test.ok(/YOUTH/.test(content), 'Variable injected');
+            test.ok(!!~(content || "").indexOf('青春'), 'East-aria language injected');
+            grunt.file.write(path.join(__dirname, 'output', 'index.html'), content);
+            test.done();
+        });
     }
 };
