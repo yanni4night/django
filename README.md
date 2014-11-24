@@ -40,10 +40,11 @@ Set django as a template engine for _[Express.js][express-url]_:
     app.set('views', path.join(__dirname, 'template'));
     app.set('view engine', 'html');
 
-##usage
+##API
 
 ######1.configure(configurations)
  - param **configurations**: \[Object\]\[Required\] the configurations object
+ - since _0.1.0_
  - return **this**
 
 Set the configurations.It should be called at first.
@@ -52,9 +53,19 @@ Set the configurations.It should be called at first.
  - param **tpl**: \[String\]\[Required\] template file name
  - param **data**: \[Object\]\[Optional\] plain object to render a template
  - param **callback**: \[Function\]\[Required\] render callback function
+ - since _0.1.0_
  - return **undefined**
 
 Render a template file with data.
+
+######3.render(source, data, callback)
+ - param **source**: \[String\]\[Required\] template source codes
+ - param **data**: \[Object\]\[Optional\] plain object to render a template
+ - param **callback**: \[Function\]\[Required\] render callback function
+ - since _0.4.0_
+ - return **undefined**
+
+Render a block of source codes with data.
 
 ##configurations
 All the following configurations should be set by _configure_ function.
@@ -68,7 +79,6 @@ The root directory of the template files,this is necessary when templates _[exte
 ##notice
 
  - only **utf8** encoding is supported
- - django **cannot** render from source code for now
 
 ##author
  - <yanni4night@gmail.com>
