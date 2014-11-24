@@ -53,7 +53,7 @@ exports.django = {
             test.done();
         });
     },
-    source: function(test) {
+    from_source: function(test) {
         django.render(grunt.file.read(path.join(__dirname, 'templates', 'index.html')), grunt.file.readJSON(path.join(__dirname, 'mock', 'index.json')), function(err, content) {
             test.ok(!err, 'No Error Occured');
             test.ok(/YOUTH/.test(content), 'Variable injected');
