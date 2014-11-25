@@ -10,4 +10,4 @@
  * @since 0.1.0
  */
 "use strict";
-module.exports = process.env.USE_COVERAGE ? require('./lib-cov') : require('./lib');
+module.exports = require('./lib');

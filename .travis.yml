@@ -8,4 +8,5 @@ node_js:
 python:
   - "2.7"
 after_script:
-  - "npm run coveralls"
+  - npm install -g istanbul
+  - npm run coveralls

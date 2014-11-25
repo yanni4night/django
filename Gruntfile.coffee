@@ -15,11 +15,8 @@ module.exports = (grunt)=>
             tests: ['test/*_test.js']
         coveralls:
             all:
-                src: 'test.lcov'
-        env:
-            coveralls:
-                USE_COVERAGE: 1
+                src: 'coverage/lcov.info'
 
     grunt.registerTask 'test', ['jshint', 'nodeunit']
     grunt.registerTask 'default', ['test']
-    grunt.registerTask 'test-coveralls', ['env', 'test', 'coveralls']
+    grunt.registerTask 'test-coveralls', ['test', 'coveralls']

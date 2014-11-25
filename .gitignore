@@ -7,5 +7,4 @@ node_modules
 bower_components
 .svn
 test/output
-*.lcov
-lib-cov
+coverage

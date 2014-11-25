@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
-    "coveralls": "grunt test-coveralls"
+    "coveralls": "istanbul cover -- grunt test && grunt coveralls"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,6 @@
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",
     "grunt-coveralls": "~1.0.0",
-    "grunt-env": "^0.4.2",
     "load-grunt-tasks": "~1.0.0",
     "time-grunt": "~1.0.0"
   },
