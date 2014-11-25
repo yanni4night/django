@@ -15,7 +15,7 @@
 var grunt = require('grunt');
 var path = require('path');
 
-var django = require('../lib/');
+var django = require('../');
 
 django.configure({
     template_dirs: path.join(__dirname, 'templates')
