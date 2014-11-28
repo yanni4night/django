@@ -9,9 +9,6 @@ module.exports = (grunt)=>
                 jshintrc: '.jshintrc'
             files: ['*.js', 'lib/*.js']
         nodeunit:
-            options:
-                reporter: 'lcov',
-                reporterOutput: 'test.lcov',
             tests: ['test/*_test.js']
         coveralls:
             all:
