@@ -1,41 +1,41 @@
 {
-  "name": "django",
-  "version": "0.4.0",
-  "description": "A wrapper of Django's template engine for Express.js",
-  "main": "index.js",
-  "scripts": {
-    "test": "grunt test",
-    "coveralls": "istanbul cover -- grunt test && grunt coveralls"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yanni4night/django.git"
-  },
-  "keywords": [
-    "django",
-    "swig",
-    "twig",
-    "jinja",
-    "template",
-    "express"
-  ],
-  "author": "yanni4night@gmail.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/yanni4night/django/issues"
-  },
-  "homepage": "https://github.com/yanni4night/django",
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-coveralls": "~1.0.0",
-    "load-grunt-tasks": "~1.0.0",
-    "time-grunt": "~1.0.0"
-  },
-  "dependencies": {
-    "async": "~0.9.0",
-    "chalk": "~0.5.1",
-    "extend": "~2.0.0"
-  }
+    "name": "django",
+    "version": "0.4.1",
+    "description": "A wrapper of Django's template engine for Express.js",
+    "main": "index.js",
+    "scripts": {
+        "test": "grunt test",
+        "coveralls": "istanbul cover -- grunt test && grunt coveralls"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yanni4night/django.git"
+    },
+    "keywords": [
+        "django",
+        "swig",
+        "twig",
+        "jinja",
+        "template",
+        "express"
+    ],
+    "author": "yanni4night@gmail.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/yanni4night/django/issues"
+    },
+    "homepage": "https://github.com/yanni4night/django",
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "grunt-contrib-jshint": "~0.10.0",
+        "grunt-contrib-nodeunit": "~0.4.1",
+        "grunt-coveralls": "~1.0.0",
+        "load-grunt-tasks": "~1.0.0",
+        "time-grunt": "~1.0.0"
+    },
+    "dependencies": {
+        "async": "~0.9.0",
+        "chalk": "~0.5.1",
+        "extend": "~2.0.0"
+    }
 }
