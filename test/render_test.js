@@ -31,9 +31,10 @@ exports.django = {
     },
     success: function(test) {
         django.renderFile('index.html', grunt.file.readJSON(path.join(__dirname, 'mock', 'index.json')), function(err, content) {
-            test.ok(!err, 'No Error Occured');
-            test.ok(/YOUTH/.test(content), 'Variable injected');
-            test.ok(!!~(content || "").indexOf('青春'), 'East-aria language injected');
+            test.ok(!err, 'Error Occured');
+            test.ok(/YOUTH/.test(content), 'Variable notinjected');
+            test.ok(/Copyright/.test(content), '@include');
+            test.ok(!!~(content || "").indexOf('青春'), 'East-aria language  not injected');
             grunt.file.write(path.join(__dirname, 'output', 'index.html'), content);
             test.done();
         });
@@ -54,11 +55,11 @@ exports.django = {
         });
     },
     from_source: function(test) {
-        django.render(grunt.file.read(path.join(__dirname, 'templates', 'index.html')), grunt.file.readJSON(path.join(__dirname, 'mock', 'index.json')), function(err, content) {
+        django.render(grunt.file.read(path.join(__dirname, 'templates', 'source.html')), grunt.file.readJSON(path.join(__dirname, 'mock', 'index.json')), function(err, content) {
             test.ok(!err, 'No Error Occured');
             test.ok(/YOUTH/.test(content), 'Variable injected');
             test.ok(!!~(content || "").indexOf('青春'), 'East-aria language injected');
-            grunt.file.write(path.join(__dirname, 'output', 'index.html'), content);
+            grunt.file.write(path.join(__dirname, 'output', 'source.html'), content);
             test.done();
         });
     }
