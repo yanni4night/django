@@ -1,6 +1,6 @@
 {
     "name": "django",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "description": "A wrapper of Django's template engine for Express.js",
     "main": "index.js",
     "scripts": {
